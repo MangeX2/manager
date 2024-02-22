@@ -86,6 +86,34 @@
         </pluginManagement>
         <plugins>
             <plugin>
+                <groupId>com.microsoft.azure</groupId>
+                <artifactId>azure-webapp-maven-plugin</artifactId>
+                <version>2.9.0</version>
+                <configuration>
+                    <subscriptionId>5b363825-6f82-4a24-b77f-ee218970bd02</subscriptionId>
+                    <resourceGroup>rg-webpage</resourceGroup>
+                    <appName>axemtum-manager</appName>
+                    <pricingTier>B2</pricingTier>
+                    <region>westus</region>
+                    <runtime>
+                        <os>Linux</os>
+                        <webContainer>Java SE</webContainer>
+                        <javaVersion>Java 17</javaVersion>
+                    </runtime>
+                    <deployment>
+                        <resources>
+                            <resource>
+                                <type>jar</type>
+                                <directory>${project.basedir}/target</directory>
+                                <includes>
+                                    <include>*.jar</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </deployment>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
