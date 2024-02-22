@@ -1,0 +1,47 @@
+/* 
+ * Copyright Axemtum 2024
+ */
+:root {
+    --color-event-background: #3d85c6;
+    --color-event-border: #ccc;
+    --color-event-text: #ffffff;
+}
+
+.draggable-container {
+    width: 200px;
+    padding: 0px 5px;
+}
+
+.draggable-header {
+    background: #f0f0f0;
+    border: 1px solid var(--color-event-border);
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.draggable-item {
+    background: var(--color-event-background);
+    border: 1px solid var(--color-event-border);
+    border-radius: 20px;
+    color: var(--color-event-text);
+    padding-left: 10px;
+
+    height: 35px;
+    display: flex;
+    align-items: center;
+
+    cursor: move;
+    margin-bottom: 5px;
+}
+
+.draggable-source {
+    opacity: 0.5;
+}
+
+:root .scheduler_default_event_inner {
+    background: var(--color-event-background);
+    border: 1px solid var(--color-event-border);
+    border-radius: 20px;
+    color: var(--color-event-text);
+    padding-left: 10px;
+}

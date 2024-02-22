@@ -1,0 +1,7 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Copyright Axemtum 2024
+<#if licenseLast??>
+${licenseLast}
+</#if>
