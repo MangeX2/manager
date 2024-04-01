@@ -20,6 +20,7 @@ public class Employee {
     private @Id
     @GeneratedValue
     Long id;
+    private String email;
     private String firstName;
     private String lastName;
     private int chartId;
@@ -32,7 +33,8 @@ public class Employee {
         // Used by database
     }
 
-    public Employee(String firstName, String lastName, int chartId, String manager, Assignment assignment) {
+    public Employee(String email, String firstName, String lastName, int chartId, String manager, Assignment assignment) {
+        this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.chartId = chartId;
@@ -50,6 +52,7 @@ public class Employee {
         }
         Employee employee = (Employee) o;
         return Objects.equals(id, employee.id)
+                && Objects.equals(email, employee.email)
                 && Objects.equals(firstName, employee.firstName)
                 && Objects.equals(lastName, employee.lastName)
                 && Objects.equals(chartId, employee.chartId)
@@ -62,7 +65,7 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, chartId, manager, assignment.getCompany(), assignment.getStartDate(), assignment.getEndDate(), assignment.getRole());
+        return Objects.hash(id, email, firstName, lastName, chartId, manager, assignment.getCompany(), assignment.getStartDate(), assignment.getEndDate(), assignment.getRole());
     }
 
     public Long getId() {
@@ -71,6 +74,14 @@ public class Employee {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstName() {
@@ -117,6 +128,7 @@ public class Employee {
     public String toString() {
         return "Employee{"
                 + "id=" + id
+                + ", email='" + email + '\''
                 + ", firstName='" + firstName + '\''
                 + ", lastName='" + lastName + '\''
                 + ", chartId='" + chartId + '\''

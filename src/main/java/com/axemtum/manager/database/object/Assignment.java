@@ -28,7 +28,6 @@ public class Assignment {
         this.startDate = startDate;
         this.endDate = endDate;
         this.role = role;
-
     }
 
     public String getCompany() {

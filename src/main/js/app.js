@@ -2,8 +2,8 @@
  * Copyright Axemtum 2024
  */
 import ManagerChart from "./gantt/managerChart";
+import { createRoot } from 'react-dom/client';
 const React = require('react');
-const ReactDOM = require('react-dom');
 
 class App extends React.Component {
 
@@ -12,7 +12,6 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(
-        <App />,
-        document.getElementById('react')
-        );
+const container = document.getElementById('react');
+const root = createRoot(container);
+root.render(<App />);
